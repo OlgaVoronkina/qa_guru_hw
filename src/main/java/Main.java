@@ -1,7 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         if (args.length == 0) {
-            System.out.println("Hello, world!");
+            String message = "Hello, world!";
+            System.out.println(message);
         }
     }
 }
