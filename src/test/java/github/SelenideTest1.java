@@ -13,13 +13,11 @@ public class SelenideTest1 extends BaseTests {
     @Description("Домашнее задание к уроку Selenide#1")
     @Test
     void checkPageSoftAssertions() {
-        open("https://github.com/");
-        $("[placeholder='Search GitHub']").val("selenide").pressEnter();
-        $("[href='/selenide/selenide']").click();                   // Откройте страницу Selenide в Github
+        open("https://github.com/selenide/selenide"); // Откройте страницу Selenide в Github
         $("#wiki-tab").click();                                     // - Перейдите в раздел Wiki проекта
         $("#wiki-pages-filter").val("SoftAssertions");              // - Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
         $("div.wiki-rightbar a[href*='SoftAssertions']").shouldHave(Condition.text("SoftAssertions")).click();
         $("a[id*=junit5]").closest("h4").shouldHave(Condition.text("JUnit5"));  // - Откройте страницу SoftAssertions, проверьте что внутри есть пример кода для JUnit5
         $$(By.xpath("//a[contains(@id, 'junit5')]/ancestor::h4/following-sibling::div[1]//span")).findBy(Condition.text("Test")).shouldBe(Condition.visible);
-        }
+    }
 }
