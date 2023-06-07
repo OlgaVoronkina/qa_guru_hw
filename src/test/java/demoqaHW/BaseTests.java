@@ -1,9 +1,9 @@
 package demoqaHW;
 
 import com.codeborne.selenide.Configuration;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
 import java.util.Random;
@@ -11,14 +11,16 @@ import java.util.Random;
 import static com.codeborne.selenide.Selenide.$;
 
 public class BaseTests {
+    @Owner("Olga Voronkina")
     @BeforeAll
     static void beforeAll() {
 //        System.setProperty("webdriver.chrome.driver", "C:/Progs/Chromedriver_win32/chromedriver.exe");
 //        Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
 //        Configuration.browserVersion="100/0";
-//        Configuration.holdBrowserOpen=true;
+        Configuration.holdBrowserOpen=true;
         Configuration.baseUrl = "https://demoqa.com";
+        Configuration.pageLoadStrategy = "eager";
     }
 
     /**
