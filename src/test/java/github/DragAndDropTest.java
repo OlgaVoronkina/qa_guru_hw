@@ -1,7 +1,7 @@
 package github;
 
 import com.codeborne.selenide.SelenideElement;
-import demoqaHW.BaseTests;
+import demoqaHW.tests.BaseTests;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
