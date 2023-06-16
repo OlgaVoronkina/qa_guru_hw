@@ -1,16 +1,17 @@
-package demoqaHW;
-
+package demoqaHW.tests;
 import com.codeborne.selenide.Configuration;
+import demoqaHW.pages.RegistrationPage;
+import demoqaHW.pages.TextBoxPage;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.By;
-
-import java.io.File;
 import java.util.Random;
 
-import static com.codeborne.selenide.Selenide.$;
 
 public class BaseTests {
+
+    RegistrationPage registrationPage = new RegistrationPage();
+    TextBoxPage textBoxPage = new TextBoxPage();
+
     @Owner("Olga Voronkina")
     @BeforeAll
     static void beforeAll() {
@@ -18,7 +19,7 @@ public class BaseTests {
 //        Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
 //        Configuration.browserVersion="100/0";
-        Configuration.holdBrowserOpen=true;
+//        Configuration.holdBrowserOpen=true;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
     }
@@ -47,12 +48,4 @@ public class BaseTests {
         return randomNumber;
     }
 
-    /**
-     * загрузка файла
-     * на вход: локатор поля, название файла
-     */
-    public void uploadFile(String fieldLocator, String fileName){
-        File file = new File("src/test/resources/"+fileName+"");
-        $(By.xpath(""+fieldLocator+"")).uploadFile(file);
-    }
 }

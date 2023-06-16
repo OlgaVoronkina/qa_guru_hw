@@ -42,7 +42,7 @@ public class Lesson6HW {
             }
 
 
-        practiceSwitchCase("multiplication", 10, 8);
+        practiceSwitchCase("multiplication1", 10, 8);
 
 
 
