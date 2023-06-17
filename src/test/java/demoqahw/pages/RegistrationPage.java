@@ -27,12 +27,17 @@ public class RegistrationPage extends BasePage {
             stateInput = $("#react-select-3-input"),
             cityInput = $("#react-select-4-input"),
             submitButton = $("#submit"),
-            closeButton = $("#closeLargeModal");
+            closeButton = $("#closeLargeModal"),
+            tableTitle = $(".practice-form-wrapper");
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
-        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         bannerRemove();
+        return this;
+    }
+
+    public RegistrationPage checkTableTitle(String title) {
+        tableTitle.shouldHave(text(title));
         return this;
     }
 

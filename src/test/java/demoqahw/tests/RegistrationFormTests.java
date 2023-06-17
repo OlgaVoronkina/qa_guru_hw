@@ -28,9 +28,11 @@ public class RegistrationFormTests extends BaseTests {
         String state = "Haryana";
         String city = "Karnal";
         String fileName = "testfile.png";
+        String tableTitle = "Student Registration Form";
 
 
         registrationPage.openPage()
+                .checkTableTitle(tableTitle)
                 .setFirstName(studentName)
                 .setLastName(studentLastName)
                 .setUserEmail(studentEmail)

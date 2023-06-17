@@ -1,6 +1,7 @@
 package demoqahw.tests;
 
 import com.codeborne.selenide.Configuration;
+import demoqahw.tests.testdata.TestData;
 import org.junit.jupiter.api.BeforeAll;
 
 public class BaseTests {

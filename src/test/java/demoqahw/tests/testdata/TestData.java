@@ -1,4 +1,4 @@
-package demoqahw.tests;
+package demoqahw.tests.testdata;
 
 import java.util.Random;
 
