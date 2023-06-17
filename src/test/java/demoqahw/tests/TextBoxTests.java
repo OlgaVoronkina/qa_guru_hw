@@ -1,14 +1,19 @@
-package demoqaHW.tests;
+package demoqahw.tests;
+
+import demoqahw.pages.TextBoxPage;
 import org.junit.jupiter.api.Test;
 
-public class TextBoxTests extends BaseTests{
+public class TextBoxTests extends BaseTests {
+
+    TextBoxPage textBoxPage = new TextBoxPage();
+
     @Test
-    void successTest(){
+    void successTest() {
 
         String fullName = "Olga Voronkina";
         String email = "olga@test.com";
-        String currentAddress = generateRandomString(20);
-        String permanentAddress = generateRandomString(20);
+        String currentAddress = testData.generateRandomString(20);
+        String permanentAddress = testData.generateRandomString(20);
 
         textBoxPage.openPage()
                 .setFullName(fullName)
@@ -17,7 +22,7 @@ public class TextBoxTests extends BaseTests{
                 .setPermanentAddress(permanentAddress)
                 .submitForm();
 
-    //верификация формы
+        //верификация формы
         textBoxPage.verifyResults("name", fullName)
                 .verifyResults("email", email)
                 .verifyResults("currentAddress", currentAddress)

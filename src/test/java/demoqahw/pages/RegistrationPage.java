@@ -1,16 +1,17 @@
-package demoqaHW.pages;
+package demoqahw.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import demoqaHW.pages.components.CalendarComponent;
-import demoqaHW.pages.components.VerifyResultsComponents;
+import demoqahw.pages.components.CalendarComponent;
+import demoqahw.pages.components.VerifyResultsComponents;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class RegistrationPage extends BasePage{
+public class RegistrationPage extends BasePage {
 
-    CalendarComponent calendarComponent= new CalendarComponent();
+    CalendarComponent calendarComponent = new CalendarComponent();
     VerifyResultsComponents verifyResultsComponents = new VerifyResultsComponents();
 
     SelenideElement
@@ -31,9 +32,13 @@ public class RegistrationPage extends BasePage{
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+        bannerRemove();
+        return this;
+    }
+
+    public void bannerRemove() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
-        return this;
     }
 
     public RegistrationPage setFirstName(String value) {
@@ -68,7 +73,8 @@ public class RegistrationPage extends BasePage{
     }
 
     public RegistrationPage setSubject(String subject) {
-        subjectsInput.setValue(subject).pressEnter();;
+        subjectsInput.setValue(subject).pressEnter();
+        ;
         return this;
     }
 

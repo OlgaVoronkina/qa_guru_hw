@@ -1,7 +1,8 @@
-package demoqaHW.pages;
+package demoqahw.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -12,7 +13,7 @@ public class TextBoxPage {
             currentAddressInput = $("#currentAddress"),
             permanentAddressInput = $("#permanentAddress"),
             submitButton = $("#submit"),
-            table =$("#output");
+            table = $("#output");
 
 
     public TextBoxPage openPage() {
@@ -47,7 +48,7 @@ public class TextBoxPage {
     }
 
     public TextBoxPage verifyResults(String key, String value) {
-        table.$("#"+key).shouldHave(Condition.text(value));
+        table.$("#" + key).shouldHave(Condition.text(value));
         return this;
     }
 }
