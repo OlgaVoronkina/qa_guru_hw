@@ -9,8 +9,8 @@ public class BaseTests {
 
     @BeforeAll
     static void beforeAll() {
-        System.setProperty("webdriver.chrome.driver", "C:/Progs/Chromedriver_win32/chromedriver.exe");
-        Configuration.browser = "chrome";
+//        System.setProperty("webdriver.chrome.driver", "C:/Progs/Chromedriver_win32/chromedriver.exe");
+//        Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
 //        Configuration.browserVersion="100/0";
 //        Configuration.holdBrowserOpen=true;
