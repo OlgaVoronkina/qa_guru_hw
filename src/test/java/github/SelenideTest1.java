@@ -1,6 +1,6 @@
 package github;
 
-import demoqaHW.tests.BaseTests;
+import demoqahw.tests.BaseTests;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.Test;
