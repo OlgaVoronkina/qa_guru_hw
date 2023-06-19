@@ -14,21 +14,21 @@ public class RegistrationFormTests extends BaseTests {
     @Test
     void successRegistrationFormTest() {
 
-        String studentName = "Olga";
-        String studentLastName = "Voronkina";
-        String studentEmail = "olya@test.com";
-        String gender = "Female";
-        String mobileNumber = testData.getRandomNumberBetweenRange();
-        String dayOfBirth = "3";
-        String monthOfBirth = "May";
-        String yearOfBirth = "1995";
-        String subjects = "Computer Science";
-        String hobby = "Sports";
-        String address = testData.generateRandomString(20);
-        String state = "Haryana";
-        String city = "Karnal";
-        String fileName = "testfile.png";
-        String tableTitle = "Student Registration Form";
+        String studentName = testData.getRandomFirstName(),
+                studentLastName = testData.getRandomLastName(),
+                studentEmail = testData.getRandomEmail(),
+                gender = testData.getRandomGender(),
+                mobileNumber = testData.getRandomPhoneNumber(10),
+                dayOfBirth = testData.getRandomNumber(1, 28),
+                monthOfBirth = testData.getRandomMonth(),
+                yearOfBirth = testData.getRandomNumber(1990, 2000),
+                subjects = testData.getRandomSubject(),
+                hobby = testData.getRandomHobbies(),
+                address = testData.getRandomAddress(),
+                state = testData.getRandomState(),
+                city = testData.getRandomCity(state),
+                fileName = "testfile.png",
+                tableTitle = "Student Registration Form";
 
 
         registrationPage.openPage()
