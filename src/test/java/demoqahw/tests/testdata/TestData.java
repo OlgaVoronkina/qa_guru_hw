@@ -21,14 +21,14 @@ public class TestData {
         return sb.toString();
     }
 
-    /**
-     * генерация рандомной строки (из цифр) в указанном диапазоне
-     */
-    public static String getRandomNumberBetweenRange(int min, int max) {
-        int x = (int) ((Math.random() * ((max - min) + 1)) + min);
-        String randomNumber = String.valueOf(x);
-        return randomNumber;
-    }
+//    /**
+//     * генерация рандомной строки (из цифр) в указанном диапазоне
+//     */
+//    public static String getRandomNumberBetweenRange(int min, int max) {
+//        int x = (int) ((Math.random() * ((max - min) + 1)) + min);
+//        String randomNumber = String.valueOf(x);
+//        return randomNumber;
+//    }
 
     public String getRandomFirstName() {
         return faker.name().firstName();
@@ -46,7 +46,7 @@ public class TestData {
         return faker.address().fullAddress();
     }
 
-    public  String getRandomGender() {
+    public String getRandomGender() {
         String[] genders = {"Male", "Female", "Other"};
         return faker.options().option(genders);
 //        return getRandomItemFromArray(genders);
@@ -56,35 +56,57 @@ public class TestData {
         return faker.phoneNumber().subscriberNumber(len);
     }
 
-    public  String getRandomMonth() {
-        String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    public String getRandomMonth() {
+        String[] months = {
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"};
         return faker.options().option(months);
     }
 
-    public int getRandomInt(int min, int max) {
-        return faker.number().numberBetween(min, max);
-    }
+//    public int getRandomInt(int min, int max) {
+//        return faker.number().numberBetween(min, max);
+//    }
 
     public String getRandomNumber(int min, int max) {
         return String.valueOf(faker.number().numberBetween(min, max));
     }
 
-    public  String getRandomSubject() {
-        String[] subjects = {"Hindi", "English", "Maths", "Physics", "Chemistry", "History", "Computer Science", "Biology",  "Social Studies"};
+    public String getRandomSubject() {
+        String[] subjects = {
+                "Hindi",
+                "English",
+                "Maths",
+                "Physics",
+                "Chemistry",
+                "History",
+                "Computer Science",
+                "Biology",
+                "Social Studies"
+        };
         return faker.options().option(subjects);
     }
 
-    public  String getRandomHobbies() {
+    public String getRandomHobbies() {
         String[] hobbies = {"Sports", "Reading", "Music"};
         return faker.options().option(hobbies);
     }
 
-    public  String getRandomState() {
+    public String getRandomState() {
         String[] states = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
         return faker.options().option(states);
     }
 
-    public  String getRandomCity(String state) {
+    public String getRandomCity(String state) {
         if (state.equals("NCR")) {
             String[] cities = {"Delhi", "Gurgaon", "Noida"};
             return faker.options().option(cities);
