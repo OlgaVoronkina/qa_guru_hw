@@ -1,3 +1,5 @@
+package jv;
+
 public class Lesson6HW {
     public static void main(String[] args) {
         //диапазоны типов данных

@@ -26,7 +26,14 @@ tasks.withType(JavaCompile){
     options.encoding = 'UTF-8'
 }
 
+//test {
+//    String tags = System.getProperty("tags") != null ? System.getProperty("tags") : "smoke"
+//    useJUnitPlatform {
+//        incudeTags tags
+//    }
+//}
 test{
     useJUnitPlatform()
-}
+    }
+
 
